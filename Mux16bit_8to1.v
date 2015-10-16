@@ -15,7 +15,7 @@
 
 //////////////////////////////////////////////////////////////////////////////////
 
-//                   Enable,Select,Input1,Input2,Input3,Input4,Input5,Input6,Input7,input8, Output
+//                   Enable,Select(3b),Input1(16b_allIO,Input2,Input3,Input4,Input5,Input6,Input7,input8, Output
 module Mux16bit_8to1(E     ,   S  , X0,X1,X2,X3,X4,X5,X6,X7, Z);
     input E;
     input [2:0] S;
@@ -25,13 +25,13 @@ module Mux16bit_8to1(E     ,   S  , X0,X1,X2,X3,X4,X5,X6,X7, Z);
     
     
     //                               Enable,Select,Input1,Input2,Output
-    Mux16bit_2to1       MUX1        (E     ,   S[0]  , X0   , X1   , Z1);
+    Mux16bit_2to1       MUX1        (E     ,   S[0]  , X7   , X6   , Z1);
     //                               Enable,Select,Input1,Input2,Output
-    Mux16bit_2to1       MUX2        (E     ,   S[0]  , X2   , X3   , Z2);    
+    Mux16bit_2to1       MUX2        (E     ,   S[0]  , X5   , X4   , Z2);    
     //                               Enable,Select,Input1,Input2,Output
-    Mux16bit_2to1       MUX3        (E     ,   S[0]  , X4   , X5   , Z3);    
+    Mux16bit_2to1       MUX3        (E     ,   S[0]  , X3   , X2   , Z3);    
     //                               Enable,Select,Input1,Input2,Output
-    Mux16bit_2to1       MUX4        (E     ,   S[0]  , X6   , X7   , Z4);
+    Mux16bit_2to1       MUX4        (E     ,   S[0]  , X1   , X0   , Z4);
     //                               Enable,Select,Input1,Input2,Output
     Mux16bit_2to1       MUX5        (E     ,   S[1]  , Z1   , Z2   , Z5);
     //                               Enable,Select,Input1,Input2,Output
